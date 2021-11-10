@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="moment.js"></script>
+
+<div id="time">
+
+</div>
+
+
+<script>
+    setInterval(function(){ 
+        countTime()
+}, 1000);
+
+    function countTime(){
+    let timeDuration = moment.duration(moment().diff('2019-11-12T21:45:00Z'))
+    let year = timeDuration._data.years.toString()
+    let days = timeDuration._data.days.toString()
+    let month = timeDuration._data.months.toString()
+    let h = timeDuration._data.hours.toString()
+    let m = timeDuration._data.minutes.toString()
+    let s = timeDuration._data.seconds.toString()
+
+  document.getElementById("time").innerHTML = year + days + month + h + m + s ; 
+    }
+
+</script>
+
+</body>
+</html> 
+
