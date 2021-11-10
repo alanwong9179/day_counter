@@ -1,9 +1,63 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+    <style>
+        #container{
+            background-color: #ffe0b636;
+            padding: 25px;
+            width: fit-content;
+            border-radius: 11px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        #years, #months, #days {
+            font-size: 28px;
+            color: #b1743f;
+        }
+
+        #hours, #minutes, #seconds{
+            font-size: 20px;
+            color: #b1743f;
+        }
+
+        #ymd{
+            font-size: 16px;
+        }
+
+        #hms{
+            font-size: 8px;
+        }
+        
+        #title{
+            font-weight: bold;
+            font-size: 20px;
+            color: #b1743f;
+        }
+    </style>
+</head>
 <body>
 <script src="moment.js"></script>
 
-<div id="time">
+<div id="container">
+<div id="title">
+  We have been together for
+</div>
+<div id="ymd">
+    <span id="years">--</span> Years
+    <span id="months">--</span> Months
+    <span id="days">--</span> Days
+</div>
+<div id="hms">
+    <span id="hours">--</span> Hours
+    <span id="minutes">--</span> Minutes
+    <span id="seconds">--</span> Seconds
+</div>
+
 
 </div>
 
@@ -15,14 +69,19 @@
 
     function countTime(){
     let timeDuration = moment.duration(moment().diff('2019-11-12T21:45:00Z'))
-    let year = timeDuration._data.years.toString()
+    let years = timeDuration._data.years.toString()
     let days = timeDuration._data.days.toString()
     let month = timeDuration._data.months.toString()
     let h = timeDuration._data.hours.toString()
     let m = timeDuration._data.minutes.toString()
     let s = timeDuration._data.seconds.toString()
 
-  document.getElementById("time").innerHTML = year + days + month + h + m + s ; 
+    document.getElementById("years").innerHTML = years; 
+    document.getElementById("months").innerHTML = month; 
+    document.getElementById("days").innerHTML = days; 
+    document.getElementById("hours").innerHTML = h; 
+    document.getElementById("minutes").innerHTML = m; 
+    document.getElementById("seconds").innerHTML = s; 
     }
 
 </script>
