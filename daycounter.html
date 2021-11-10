@@ -13,6 +13,9 @@
             border-radius: 11px;
             text-align: center;
             font-family: 'Playfair Display', serif;
+            -webkit-animation: fadein 2s;
+            animation: fadein 2s;
+
         }
 
         #years, #months, #days {
@@ -38,6 +41,17 @@
             font-size: 20px;
         
         }
+
+        @keyframes fadein {
+                from { opacity: 0; }
+                to   { opacity: 1; }
+            }
+    @-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
     </style>
 </head>
 <body>
@@ -48,14 +62,14 @@
     &#128105; &#128150; &#128104;
 </div>
 <div id="ymd">
-    <span id="years">--</span> Years
-    <span id="months">--</span> Months
-    <span id="days">--</span> Days
+    <span id="years">-</span> Years
+    <span id="months">-</span> Months
+    <span id="days">-</span> Days
 </div>
 <div id="hms">
-    <span id="hours">--</span> Hours
-    <span id="minutes">--</span> Minutes
-    <span id="seconds">--</span> Seconds
+    <span id="hours">-</span> Hours
+    <span id="minutes">-</span> Minutes
+    <span id="seconds">-</span> Seconds
 </div>
 
 
